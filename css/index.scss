@@ -1,3 +1,5 @@
+@import 'mixin.scss';
+
 /*
 -----------------------------------------
  > Index Page <
@@ -33,6 +35,20 @@
         overflow: hidden;
         .hero-vid {
             margin-top: -185px;
+
+            @include tablet {
+              display: none !important;
+            }
+        }
+        .hero-banner {
+          margin-top: -25px;
+          width: 100%;
+          display: none;
+
+          @include tablet {
+              display: block !important;
+          }
+
         }
     }
 }

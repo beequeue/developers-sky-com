@@ -109,7 +109,8 @@ Images can either be served from an external location (in which case, include th
 "link": "A link (if available) to the talk website",
 "date": "The date of your talk",
 "description": "A description of your talk that appears inside the panel. This should be written in HTML inside these quotes",
-"video": "An embedded link to the video of your talk (preferably YouTube). If no video is available, please include the same image link that you use for your 'image' (Please avoid this option if possible).",
+"videoType": "The type of your video. Use 'youtube' or '{other provider}'
+"video": "YouTube: Please include only the link provided with your 'emdeded' code. You do not need to provide the iframe information. Other Provider: Please provide the embedded code for your video, with the following styling: "style='width:100%;height:515px'"",
 "image": "A thumbnail image for your talk that will appear in the tile, preferably in the ratio 16:9"
 ```
 

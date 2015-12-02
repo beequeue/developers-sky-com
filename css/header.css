@@ -1,27 +1,25 @@
+/*
+-----------------------------------------
+ > Mixins <
+-----------------------------------------
+*/
 .header {
   height: 100px;
 }
 
-.dev-logo-text {
-  font-size: 25px;
-}
-
 .dev-logo {
-  font-size: 20px;
   float: left;
   margin: 0 3%;
-  line-height: 45px;
-}
-
-.dev-logo a {
   display: block;
   text-decoration: none;
   margin-top: 18px;
-  line-height: 45px;
 }
 
-.dev-logo a .dev-logo-image {
-  vertical-align: middle;
+@media (max-width: 768px) {
+  .dev-logo img {
+    margin-top: -6px;
+    margin-left: -20px;
+  }
 }
 
 .menu_button {
@@ -46,6 +44,6 @@
   float: left;
   -webkit-transition: all 0.2s ease-out;
   margin-bottom: 0;
-  width: 71%;
-  border-bottom: none;
+  width: 49% !important;
+  border-bottom: none !important;
 }

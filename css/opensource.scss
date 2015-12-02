@@ -1,3 +1,5 @@
+@import 'mixin.scss';
+
 /*
 -----------------------------------------
  > Open Source Page <
@@ -9,6 +11,16 @@
         background-image: url(/images/assets/opensource.jpg);
         background-size: cover;
         background-position: 0px -145px;
+
+        .hero-banner {
+          margin-top: -50px;
+          width: 100%;
+          display: none;
+
+          @include tablet {
+              display: block !important;
+          }
+        }
     }
 
     .tile-container {

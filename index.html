@@ -10,13 +10,6 @@ title: Index
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name = "viewport" content = "width=device-width; initial-scale = 1; maximum-scale=1; user-scalable = no;" />
-        <link rel="stylesheet" href="http://web-toolkit.global.sky.com/2.3.6/stylesheets/toolkit.css"/>
-<!--        <link rel="stylesheet" href="//octicons.github.com/components/octicons/octicons/octicons.css"/>-->
-        <link rel='stylesheet' href='//assets.sky.com/dist/1235/fonts/skyicons.css'>
-        <link rel="stylesheet" href="styles.css"/>
-<!--        <link rel="stylesheet" href="/css/toolkit-article-fix.css"/>-->
         <title>Sky Developers</title>
     </head>
 
@@ -27,6 +20,7 @@ title: Index
                     <video loop autoplay class="hero-vid" width="100%">
                         <source src="https://player.vimeo.com/external/133429919.hd.mp4?s=83f8598511742e45774ec271adb7237c&profile_id=113"/>
                     </video>
+                    <img class="hero-banner" src="../images/assets/mobileBanner.png" />
                 </div>
             </section>
 
@@ -59,7 +53,6 @@ title: Index
                                 }
                             } else {
                                 {% for post in site.categories.external %}
-                                    alert("{{post.id}}");
                                     $('#tiles').append('<div class="tile ' + getClassName(numOfBlogs) + '"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg" src="{{post.image}}" alt="Blog Title" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">{{ post.title }}</h2></div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div>');
                                 {% endfor %}
                             }
@@ -91,6 +84,9 @@ title: Index
                                     numOfTiles = 3;
                                     tileType = "small";
                                 }
+
+
+
 
                                 for(var i = 0; i < numOfRows; i++) {
                                     for(var n = 0; n < numOfTiles; n++) {

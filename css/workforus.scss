@@ -1,25 +1,55 @@
+@import 'mixin.scss';
+
 /*
 -----------------------------------------
  > Work For Us Page <
 -----------------------------------------
 */
 
+.rc-anchor-normal{
+    width: 100% !important;
+}
+
 .polaris-wrapper.workforus {
+    @include tablet {
+      .title {
+        width: 85%; 
+      }
+    }
     .hero-wrapper {
         background-image: url(/images/assets/workforus.jpg);
         background-size: cover;
-        background-position: 100px -345px;
+        background-position: 0 -345px;
+        background-repeat: no-repeat;
+        @include tablet {
+            background-position: 0 -200px;
+        }
+        @include mobile {
+            background-position: 0 -100px;
+        }
     }
 
     .tile-container.top {
         padding-left: 0;
         padding-right: 9.5%;
         margin-top: -40px;
-
+        @include tablet {
+            padding: 0;
+            margin-top: 0;
+        }
         .tile.small.apply {
             width: 25%;
             margin-left: 8%;
             margin-right: 0;
+            @include tablet {
+                width: 50%;
+                margin: 0 auto;
+                float: none;
+                display: table;
+            }
+            @include mobile {
+                width: 65%;
+            }
             .tile-media {
                 padding-bottom: 0;
                 span {
@@ -39,18 +69,15 @@
                 }
             }
             .tile-bg {
-//                background: radial-gradient(#197bc9,#135fa0);
                 background-color: #0076be;
                 transition: all .6s ease;
             }
             .tile-link:hover {
                 .tile-bg {
-//                    background: radial-gradient(#0076be,#0076be);
                     background-color: #1A90D8;
                     transition: all .6s ease;
                 }
                 .tile-media span {
-//                    color: #ddd;
                     transition: all .6s ease;
                 }
             }
@@ -65,6 +92,11 @@
             border: none;
             background-color: #734993;
             color: #fff;
+            @include tablet {
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 8%;
+            }
             h2 {
                 margin: 5px 0 10px;
             }
@@ -83,13 +115,24 @@
             form {
                 width: 100%;
                 color: #fff;
+                @media (min-width: 768px) and (max-width: 913px) {
+                    width: 75%;
+                    display: table;
+                    margin: 0 auto;
+                }
                 .form-left {
                     width: 50%;
                     float: left;
+                    @media (max-width: 913px) {
+                        width: 100%;
+                    }
                 }
                 .form-right {
                     width: 50%;
                     float: right;
+                    @media (max-width: 913px) {
+                        width: 100%;
+                    }
                 }
                 .row {
                     min-height: 310px;
@@ -97,38 +140,77 @@
                 .row.form {
                     min-height: 0;
                     textarea {
-                        min-width: 400px;
-                        max-width: 400px;
+                        max-width: 100%;
                         max-height: 250px;
+                    }
+                }
+                .row.form.captcha {
+                    padding-left: 25%;
+                    @include tablet {
+                        padding-left: 0;
                     }
                 }
                 .row.checkbox {
                     margin: 0 0 8px 0;
+                    float: left;
+                    width: 100%;
                 }
-                .row.no-label, .g-recaptcha, .form-submit {
+                input[type="checkbox"] {
+                    float: left;
+                }
+                .row.no-label, .form-submit {
                     margin-left: 25%;
                     margin-top: 10px;
+                    @include tablet {
+                        margin-left: 0;
+                    }
                 }
                 .row > label  {
-                    width: 25% !important;
+                    width: 25%;
+                    @include tablet {
+                        width: 75%;
+                        margin-bottom: 5px;
+                        text-align: left;
+                    }
                 }
                 .row > input[type="text"], .row > input[type="email"], .row > textarea {
                     width: 400px;
-                }
-                #skills {
-                    margin-left: 10%;
+                    @media (max-width: 1277px) {
+                        width: 70%;
+                    }
+                    @include tablet {
+                        width: 100%;
+                    }
                 }
                 #other {
                     width: 332px;
+                    margin-bottom: 20px;
+                    @include tablet {
+                        width: 100%;
+                    }
                 }
                 .form-submit {
                     margin-top: 80px;
-                    margin-left: 49%;
+                    margin-left: calc(50% - 32px);
                     width: 100px;
+                    @include tablet {
+                        margin-top: 40px;
+                    }
                 }
                 .g-recaptcha {
                     transform: scale(1.325);
                     transform-origin: 0 0;
+                    @media (max-width: 1277px) {
+                        width: 304px;
+                        margin: 50px auto 0;
+                        padding-right: 20px;
+                        transform: scale(1);
+                        transform-origin: center;
+                    }
+                    @include tablet {
+
+
+                    }
                 }
                 .italicLabel {
                     font-style: italic;
@@ -144,25 +226,27 @@
     .tile-container.middle {
         padding: 0;
         margin-top: -30px;
-        blockquote {
+        .quote {
             border: none;
             text-align: center;
-            margin: 100px 0 70px 0;
-            quotes: "\201C""\201D""\2018""\2019";
+            margin: 100px auto 70px;
+            @include tablet {
+                width: 80%;
+            }
+            .quote_marks {
+                font-size: 70px;
+                color: #ed0677;
+                @include tablet {
+                    font-size: 50px;
+                    line-height: 30px;
+                }
+            }
             h2 {
-                display: inline-block;
-            }
-            &:before {
-                content: open-quote;
-                font-weight: bold;
-                font-size:100px;
-                color:#ed0677;
-            }
-            &:after {
-                content: close-quote;
-                font-weight: bold;
-                font-size:100px;
-                color:#ed0677;
+                display: inline;
+                @media (max-width: 992px) {
+                    font-size: 32px;
+                    line-height: 45px;
+                }
             }
         }
         .text {
@@ -177,14 +261,27 @@
     }
     .tile-container.bottom {
         margin-top: 40px;
+        .title {
+            width: 75%;
+        }
         .row {
             margin: 25px 0;
+            width: 100%;
             float: left;
             .description.small-long {
                 float:left;
                 width: 66%;
                 padding: 0 20px;
                 margin-bottom: 22px;
+                @include tablet {
+                    width: 75%;
+                    margin: 0 auto 22px;
+                    display: table;
+                    float: none;
+                }
+                @include mobile {
+                    width: 100%;
+                }
                 h2 {
                     margin-top: 0;
                 }
@@ -212,6 +309,15 @@
             }
             &.four hr {
                 border-color: #f05423;
+            }
+            .tile {
+                @include tablet {
+                    width: 75%;
+                    padding: 0;
+                    margin: 0 auto 22px;
+                    display: table;
+                    float: none;
+                }
             }
             .tile .tile-link:hover {
                 cursor: default;

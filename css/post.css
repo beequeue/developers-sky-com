@@ -1,3 +1,14 @@
+/*
+-----------------------------------------
+ > Mixins <
+-----------------------------------------
+*/
+@media (max-width: 768px) {
+  .post-content img {
+    width: 100%;
+  }
+}
+
 .post-header-title {
   color: #fff;
   width: 980px;
@@ -7,13 +18,37 @@
   padding-right: 15px;
 }
 
+@media (max-width: 768px) {
+  .post-header-title {
+    width: 100% !important;
+    margin-left: -20px !important;
+  }
+}
+
 .post-header-title h1 {
   font-weight: bold;
 }
 
+.post-title {
+  margin-bottom: -6px;
+}
+
+@media (max-width: 768px) {
+  .post-title {
+    padding-top: 10px;
+    padding-right: 10px;
+  }
+}
+
 .post-meta {
-  line-height: 0;
   padding-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+  .post-meta {
+    padding-bottom: 15px;
+    padding-right: 10px;
+  }
 }
 
 .post h2 {
@@ -21,6 +56,19 @@
   font-weight: bold;
 }
 
+.post h4 {
+  color: #734993;
+  font-weight: bold;
+  margin-bottom: -10px;
+  font-size: 1.2rem;
+}
+
 .post th, .post a {
   color: #734993;
+}
+
+.post blockquote {
+  font-style: italic;
+  border-left: 4px solid #734993;
+  padding-left: 5px;
 }
