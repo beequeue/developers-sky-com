@@ -60,6 +60,7 @@ image: images/test.png
 excerpt: "Sky are attending Google I/O - here's what we're planning to see any why"
 ---
 ```
+Note: Please be careful to escape any characters in the header. For instance, instead of using an apostrophe ('), replace it with `&apos;`, and instead of using an ampersand (&), replace with `&amp;`. Further replacements might be less than/greater than symbols, which you should replace with `&lt;` and `&gt;` respectively. Finally, please try and avoid double quotation ("), as these will signal the end of your string.
 
 * Write your awesome post using standard markup. See the [examples](https://github.com/BSkyB/bskyb.github.io/blob/master/_example_posts/2015-05-05-example-post.markdown) or [documentation](http://jekyllrb.com/docs/posts/). If you're running Jekyll, the site will automatically update on saving your post.
 
