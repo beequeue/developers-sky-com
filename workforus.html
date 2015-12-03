@@ -10,15 +10,6 @@ title: Work For Us
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name = "viewport" content = "width=device-width; initial-scale = 1; maximum-scale=1; user-scalable = no;" />
-        <link rel="stylesheet" href="http://web-toolkit.global.sky.com/2.3.6/stylesheets/toolkit.css"/>
-<!--        <link rel="stylesheet" href="//octicons.github.com/components/octicons/octicons/octicons.css"/>-->
-        <link rel='stylesheet' href='//assets.sky.com/dist/1235/fonts/skyicons.css'>
-        <link rel="stylesheet" href="../styles.css"/>
-        <link rel="stylesheet" type="text/css" href="../scripts/slick/slick.css"/>
-        <link rel="stylesheet" type="text/css" href="../scripts/slick/slick-theme.css"/>
-        <script type="text/javascript" src="../scripts/slick/slick.js"></script>
-<!--        <link rel="stylesheet" href="/css/toolkit-article-fix.css"/>-->
         <title>Sky Developers</title>
     </head>
 
@@ -58,8 +49,8 @@ title: Work For Us
                             <a class="panel-close" id="tile_1-close"><span class="skycon--close"></span>Close</a>
                         </div>
                         <div class="panel-content">
-                            <h3>Interested in working for us?</h3>
                             <form id="contact-form" class="sky-form" action="javascript:submitForm()" method="POST">
+                              <h3>Interested in working for us?</h3>
                                 <div class="form-left">
                                     <input type="text" name="_gotcha" style="display:none" />
                                     <input type="hidden" name="_subject" value="New submission!" />
@@ -71,7 +62,9 @@ title: Work For Us
                                       <label for="email">Email *</label>
                                       <input id="email" type="email" placeholder="Enter your E-mail"/ name="_replyto" required>
                                     </div>
-                                    <label id="skills">What are your Skills? <span class="italicLabel">(Please tick all that are applicable)</span></label>
+                                    <div class="row form">
+                                        <label id="skills">What are your Skills? <span class="italicLabel">(Please tick all that are applicable)</span></label>
+                                    </div>
                                     <div class="row form no-label">
                                         <div class="row form checkbox">
                                           <input type="checkbox" id="Java"/>
@@ -82,8 +75,8 @@ title: Work For Us
                                           <label for="CSharp">C#</label>
                                         </div>
                                         <div class="row form checkbox">
-                                          <input type="checkbox" id="C++"/>
-                                          <label for="C++">C++</label>
+                                          <input type="checkbox" id="Cpp"/>
+                                          <label for="Cpp">C++</label>
                                         </div>
                                         <div class="row form checkbox">
                                           <input type="checkbox" id="Mobile"/>
@@ -106,8 +99,12 @@ title: Work For Us
                                           <label for="PHP">PHP</label>
                                         </div>
                                         <div class="row form checkbox">
-                                          <input type="checkbox" id="SQL"/>
-                                          <label for="SQL">SQL</label>
+                                          <input type="checkbox" id="TDD"/>
+                                          <label for="TDD">Test Driven Development</label>
+                                        </div>
+                                        <div class="row form checkbox">
+                                          <input type="checkbox" id="ContinuousInt"/>
+                                          <label for="ContinuousInt">Continuous Integration</label>
                                         </div>
                                         <div class="row form checkbox">
                                           <input type="checkbox" id="Agile"/>
@@ -132,8 +129,8 @@ title: Work For Us
                                       <label for="message">Message <span class="italicLabel">(Optional)</span></label>
                                       <textarea id="message" name="message" placeholder="Enter your message"></textarea>
                                     </div>
-                                    <div class="row form">
-                                    <div class="g-recaptcha" data-sitekey="6LeL4A8TAAAAAKoJv1Zuk_Azj8PGwD6nfXCceWHW"></div>
+                                    <div class="row form captcha">
+                                        <div class="g-recaptcha" data-sitekey="6LeL4A8TAAAAAKoJv1Zuk_Azj8PGwD6nfXCceWHW" data-size="nromal"></div>
                                     </div>
                                     <div class="row form">
                                       <button name="form-submit" type="submit" class="form-submit btn primary-cta">Send</button>
@@ -145,15 +142,18 @@ title: Work For Us
                 </div>
             </section>
             <section class="tile-container middle">
-                <blockquote><h2>Join the team that’s always changing the game</h2></blockquote>
+                <div class="quote">
+                    <span class="quote_marks">“</span>
+                    <h2>Join the team that’s always changing the game.</h2>
+                    <span class="quote_marks">”</span>
+                </div>
                 <div class="text"><p>Sky is Europe’s leading entertainment company; working at Sky means making an impact on 21 million customers across five countries: Italy, Germany, Austria, the UK and Ireland. We offer the best and broadest range of content, deliver market-leading customer service and use innovative new technology to give customers a better TV experience, whenever and wherever they choose.</p> </div>
             </section>
 
             <section class="tile-container bottom">
-                <!-- <h2 class="title">Our Stories</h2> -->
                 <h2 class="title">Why Sky?</h2>
-                <div class="row one">
-                    <div class="tile small apply">
+                <div class="row one" id="row-1">
+                    <div class="tile small apply" id="tileImg-1">
                         <div class="tile-inner">
                             <a class="tile-link">
                                 <div class="tile-bg"></div>
@@ -194,8 +194,8 @@ title: Work For Us
                         </section>
                     </div>
                 </div>
-                <div class="row three">
-                    <div class="tile small apply">
+                <div class="row three" id="row-3">
+                    <div class="tile small apply" id="tileImg-2">
                         <div class="tile-inner">
                             <a class="tile-link">
                                 <div class="tile-bg"></div>
@@ -241,7 +241,24 @@ title: Work For Us
         <script type="text/javascript">
             $(document).ready(function(){
 
+                if(window.outerWidth <= 768) {
+                    $('#tileImg-1').appendTo('#row-1');
+                    $('#tileImg-2').appendTo('#row-3');
+                }
+
+                $(window).on("resize", function(event) {
+                    if(window.outerWidth <= 768) {
+                        $('#tileImg-1').appendTo('#row-1');
+                        $('#tileImg-2').appendTo('#row-3');
+                    } else {
+                        $('#tileImg-1').prependTo('#row-1');
+                        $('#tileImg-2').prependTo('#row-3');
+                    }
+                });
+
                 $('#tile-1').click(function() {
+                    $(".mobile-menu").hide();
+
                     $(this).toggleClass('selected');
                     id = this.id;
                     id = id.split('-');
@@ -254,7 +271,6 @@ title: Work For Us
                 $('.panel-close').click(function(){
                     $(this).toggleClass('selected');
                     id = this.id;
-                    //FIX THIS TO BE NICER
                     idTemp = id.split('-');
                     id = idTemp[0].split('_');
                     $(idTemp[0]).toggleClass('selected');
@@ -265,44 +281,41 @@ title: Work For Us
             });
 
             function submitForm(){
-              $.ajax({
-                url: "https://www.google.com/recaptcha/api/siteverify",
-                method: "POST",
-                data: {secret: "6LeL4A8TAAAAAPTd79R2RYIyd9ufKGHvkOIskjMW", response: grecaptcha.getResponse()},
-                success: function(data) {
-                  var name = $('#fullName').val() + "\n";
-                  var email = $('#email').val() + "\n";
-                  var skills = ["Java", "CSharp", "C++", "Mobile", "Javascript", "HTML", "CSS", "PHP", "SQL", "Agile"];
-                  var skillsFormatted = "";
-                  for(i = 0; i < skills.length; i++) {
-                      if ($('#' + skills[i]).is(":checked")) {
-                          skillsFormatted += "- " + skills[i] + "\n";
+              var captcha = grecaptcha.getResponse();
+              if(captcha.length != 0) {
+                var name = $('#fullName').val() + "\n";
+                var email = $('#email').val() + "\n";
+                var skills = ["Java", "CSharp", "Cpp", "Mobile", "Javascript", "HTML", "CSS", "PHP", "TDD", "ContinuousInt", "Agile"];
+                var skillsFormatted = "";
+                for(i = 0; i < skills.length; i++) {
+                    if ($('#' + skills[i]).is(":checked")) {
+                      if(skills[i] == "Cpp") {
+                        skillsFormatted += "- " + "C++" + "\n";
+                      } else if(skills[i] == "CSharp") {
+                        skillsFormatted += "- " + "C#" + "\n";
+                      } else if(skills[i] == "ContinuousInt") {
+                        skillsFormatted += "- " + "Continuous Integration" + "\n";
+                      } else {
+                        skillsFormatted += "- " + skills[i] + "\n";
                       }
-                  }
-                  var otherSkills = $('#other').val() + "\n";
-                  var message = $('#message').val() + "\n";
-                  var linkedIn = $('#linkedin').val() + "\n";
-                  var github = $('#github').val() + "\n";
+                    }
+                }
+                var otherSkills = $('#other').val() + "\n";
+                var message = $('#message').val() + "\n";
+                var linkedIn = $('#linkedin').val() + "\n";
+                var github = $('#github').val() + "\n";
 
-                  $.ajax({
-                    //url: "//formspree.io/Annelisa.Dinwoodie@sky.uk",
-                    url: "//formspree.io/craig.rees2@sky.uk",
-                    method: "POST",
-                    data: {Name: name, Email: email, Skills: skillsFormatted, Other: otherSkills, LinkedIn: linkedIn, GitHub: github, Message: message},
-                    success: function(data) {
-                      $("#contact-form").children().hide();
-                      $("#contact-form").append("<p>Thank you for contacting us.</p>");
-                    },
-                    dataType: "json",
-                  });
-                },
-                error: function(xhr, status, error) {
-                  alert(error);
-                  alert(xhr.responseText);
-                  alert('error');
-                },
-                dataType: "json"
-              });
+                $.ajax({
+                  url: "//formspree.io/Annelisa.Dinwoodie@sky.uk",
+                  method: "POST",
+                  data: {Name: name, Email: email, Skills: skillsFormatted, Other: otherSkills, LinkedIn: linkedIn, GitHub: github, Message: message},
+                  success: function(data) {
+                    $("#contact-form").children().hide();
+                    $("#contact-form").append("<p id='thankyou' style='text-align: center; font-size: 35px;'>Thank you for contacting us</p>");
+                  },
+                  dataType: "json",
+                });
+              }
             }
         </script>
         {% include footer.html %}
