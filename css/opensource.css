@@ -1,5 +1,10 @@
 /*
 -----------------------------------------
+ > Mixins <
+-----------------------------------------
+*/
+/*
+-----------------------------------------
  > Open Source Page <
 -----------------------------------------
 */
@@ -7,6 +12,18 @@
   background-image: url(/images/assets/opensource.jpg);
   background-size: cover;
   background-position: 0px -145px;
+}
+
+.polaris-wrapper.opensource .hero-wrapper .hero-banner {
+  margin-top: -50px;
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.opensource .hero-wrapper .hero-banner {
+    display: block !important;
+  }
 }
 
 .polaris-wrapper.opensource .tile-container .tile .mega-octicon {

@@ -60,6 +60,7 @@ image: images/test.png
 excerpt: "Sky are attending Google I/O - here's what we're planning to see any why"
 ---
 ```
+> Note: Please be careful to escape any characters in the header. For instance, instead of using an apostrophe ('), replace it with `&apos;`, and instead of using an ampersand (&), replace with `&amp;`. Further replacements might be less than/greater than symbols, which you should replace with `&lt;` and `&gt;` respectively. Finally, please try and avoid double quotation ("), as these will signal the end of your string.*
 
 * Write your awesome post using standard markup. See the [examples](https://github.com/BSkyB/bskyb.github.io/blob/master/_example_posts/2015-05-05-example-post.markdown) or [documentation](http://jekyllrb.com/docs/posts/). If you're running Jekyll, the site will automatically update on saving your post.
 
@@ -109,7 +110,8 @@ Images can either be served from an external location (in which case, include th
 "link": "A link (if available) to the talk website",
 "date": "The date of your talk",
 "description": "A description of your talk that appears inside the panel. This should be written in HTML inside these quotes",
-"video": "An embedded link to the video of your talk (preferably YouTube). If no video is available, please include the same image link that you use for your 'image' (Please avoid this option if possible).",
+"videoType": "The type of your video. Use 'youtube' or '{other provider}'
+"video": "YouTube: Please include only the link provided with your 'emdeded' code. You do not need to provide the iframe information. Other Provider: Please provide the embedded code for your video, with the following styling: "style='width:100%;height:515px'"",
 "image": "A thumbnail image for your talk that will appear in the tile, preferably in the ratio 16:9"
 ```
 
