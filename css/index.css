@@ -8,6 +8,7 @@
  > Index Page <
 -----------------------------------------
 */
+/* line 9, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
 .polaris-wrapper {
   position: relative;
   box-sizing: border-box;
@@ -15,48 +16,72 @@
   overflow: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  -moz-osx-font-smoothing: grayscale; }
 
+/* line 19, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
 .polaris-wrapper * {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
+/* line 23, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
 .hero-container {
   position: relative;
   padding-bottom: 32.5%;
   max-width: 100%;
   margin-left: auto;
-  margin-right: auto;
-}
+  margin-right: auto; }
+  /* line 29, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+  .hero-container .hero-wrapper {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden; }
+    /* line 36, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+    .hero-container .hero-wrapper .hero-vid {
+      margin-top: -185px; }
+      @media (max-width: 768px) {
+        /* line 36, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+        .hero-container .hero-wrapper .hero-vid {
+          display: none !important; } }
+    /* line 43, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+    .hero-container .hero-wrapper .hero-banner {
+      margin-top: -25px;
+      width: 100%;
+      display: none; }
+      @media (max-width: 768px) {
+        /* line 43, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+        .hero-container .hero-wrapper .hero-banner {
+          display: block !important; } }
 
-.hero-container .hero-wrapper {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-}
+/* line 57, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+.tile-container .tile.small-long {
+  width: 64%;
+  float: left;
+  margin-right: 1.31669%;
+  margin-left: 1.31669%;
+  padding: 15px 30px;
+  border: none;
+  background-color: #734993;
+  text-align: right;
+  color: #fff; }
+  @media (max-width: 1192px) {
+    /* line 57, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+    .tile-container .tile.small-long {
+      width: 97.36662%; } }
+  /* line 70, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+  .tile-container .tile.small-long .tile-content {
+    padding-bottom: 0; }
+  /* line 73, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+  .tile-container .tile.small-long p {
+    padding-bottom: 10px; }
+  /* line 76, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+  .tile-container .tile.small-long a {
+    padding-bottom: 12px;
+    color: #fff;
+    text-decoration: none; }
+    /* line 80, /Users/abr65/Documents/Development/tcrands.github.io/css/index.scss */
+    .tile-container .tile.small-long a:hover {
+      text-decoration: underline; }
 
-.hero-container .hero-wrapper .hero-vid {
-  margin-top: -185px;
-}
-
-@media (max-width: 768px) {
-  .hero-container .hero-wrapper .hero-vid {
-    display: none !important;
-  }
-}
-
-.hero-container .hero-wrapper .hero-banner {
-  margin-top: -25px;
-  width: 100%;
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .hero-container .hero-wrapper .hero-banner {
-    display: block !important;
-  }
-}
+/*# sourceMappingURL=index.css.map */

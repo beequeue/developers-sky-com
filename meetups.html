@@ -3,8 +3,163 @@ title: Events &amp; Talks
 ---
 {% include head.html %}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $.get('../events.json', function(data) {
+      var content = "";
+      var banners = "";
+      var panel ="";
+      $.each(data.events, function(i, item) {
+        id = i + 1;
+
+        var eventStartDate = moment(item.start_date);
+        var eventEndDate = moment(item.end_date);
+
+        var formattedDate;
+        if(eventStartDate.isSame(eventEndDate)) {
+          formattedDate = eventStartDate.format('D MMMM YYYY');
+        } else if(eventStartDate.month() == eventEndDate.month()) {
+          var monthYear = moment(eventStartDate.year() + '-' + (eventStartDate.month() + 1)).format('MMMM YYYY');
+          var days = eventStartDate.date() + '-' + eventEndDate.date();
+          formattedDate = days + " " + monthYear;
+        } else if(eventStartDate.year() == eventEndDate.year()) {
+          var year = moment(eventStartDate.year());
+          var start = moment((eventStartDate.month() + 1) + "-" + eventStartDate.date()).format('D MMMM');
+          var end = moment((eventEndDate.month() + 1) + "-" + eventEndDate.date()).format('D MMMM');
+          formattedDate = start + " - " + end + " " + year;
+        } else {
+          var startDate = (moment(eventStartDate.year() + '-' + (eventStartDate.month() + 1) + '-' + eventStartDate.date())).format('D MMMM YYYY');
+          var endDate = (moment(eventEndDate.year() + '-' + (eventEndDate.month() + 1) + '-' + eventEndDate.date())).format('D MMMM YYYY');
+          formattedDate = startDate + ' - ' + endDate;
+        }
+
+        var weekSinceEvent = moment(eventEndDate).add(14, "days");
+
+        if(moment().isBetween(moment(eventEndDate.add(1, "days")), weekSinceEvent)) {
+          content += '<div class="tile medium tile-slider" id="sliderTile-' + id + '"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg blur" style="z-index: 1; -webkit-filter: blur(5px);" src="' + item.image + '" alt="' + item.title + '" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">' + item.title + '</h2><h4 class="tile-meta occurred">' + 'This event has already occurred' + '</h4></div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div>';
+
+          panel += '<div class="panel" id="sliderPanel-' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media"><img class="panel-image" src="'+ item.image +'"/><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><h4 class="panel-date">' + formattedDate + '</h4><hr style="border: 1px solid #F05423"><div class="panel-des occurred">This event has already occurred. A video of the talk will be available soon.</div><hr style="border: 1px solid #F05423"><div class="panel-des">' + item.description + '</div></div></div></div></div>';
+
+          banners += '<img src="' + item.banner + '"/>'
+        } else if (moment().isBefore(eventEndDate)) {
+          content += '<div class="tile medium tile-slider" id="sliderTile-' + id + '"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg" src="' + item.image + '" alt="' + item.title + '" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">' + item.title + '</h2><h4 class="tile-meta">' + formattedDate + '</h4></div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div>';
+
+          panel += '<div class="panel" id="sliderPanel-' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media"><img class="panel-image" src="'+ item.image +'"/><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><h4 class="panel-date">' + formattedDate + '</h4><div class="panel-des">' + item.description + '<a href="' + item.link + '" class="btn">More Information</a></div></div></div></div></div>';
+
+          banners += '<img src="' + item.banner + '"/>'
+        }
+
+      })
+      $('.sliderTop').append(content);
+      $('.img-container').append(banners);
+      $('.slider-panel').append(panel);
+
+      $('.tile-slider').click(function(){
+        $(".mobile-menu").hide();
+        $(this).toggleClass('selected');
+        id = this.id;
+        id = id.split('-');
+        id = "#sliderPanel-" + id[1];
+        $(id).addClass('open');
+        $('body').css('overflow','hidden');
+      });
+
+      $('.panel-close').click(function(){
+        $(this).toggleClass('selected');
+        id = this.id;
+        idTemp = id.split('-');
+        id = idTemp[0].split('_');
+        $(idTemp[0]).toggleClass('selected');
+        panel = "#sliderPanel-" + id[1];
+        $(panel).removeClass('open');
+        $('body').css('overflow','scroll');
+      });
+
+      if(window.outerWidth > 480) {
+          $('.img-container').slick({
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: false,
+              infinite: false,
+              fade: true,
+              asNavFor: '.sliderTop'
+          });
+          $('.sliderTop').slick({
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              asNavFor: '.img-container',
+              autoplay: true,
+              autoplaySpeed: 4000,
+              infinite: false,
+              dots: true,
+         });
+     } else {
+         $('.img-container').html('<img style=" width: 100%; "class="tile-media-bg" src="/images/assets/people.jpeg" alt="" />')
+         $('.sliderTop').slick({
+             slidesToShow: 1,
+             slidesToScroll: 1,
+             autoplay: true,
+             autoplaySpeed: 4000,
+             infinite: false,
+             dots: true,
+         });
+     }
+    setInterval(function() {
+      $('body').css('opacity', '1');
+    }, 300);
+    });
+
+    $.get('../talk.json', function(data) {
+      var content = "";
+      $.each(data.talks, function(i, item) {
+        id = i + 1;
+        content += '<div id="tile-' + id + '" class="tile small tile-talks"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg" src="' + item.image + '" alt="Blog Title" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">' + item.title + '</h2><h4 class="tile-meta">' + item.author + ' | ' + item.date + '</div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel" id="panel' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media" id="youtubeVideo' + id + '">' + (item.videoType=="youtube" ? '<iframe width="760" height="515" src="' + item.video + '?enablejsapi=1" frameborder="0" allowfullscreen></iframe>' : item.video) + '<section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><div class="panel-des">' + item.description + '</div></div></div></div></div>';
+      })
+      $('#talksGiven').append(content);
+
+      $('.tile-talks').click(function(){
+        $(".mobile-menu").hide();
+        $(this).toggleClass('selected');
+        id = this.id;
+        id = id.split('-');
+        id = "#panel" + id[1];
+        $(id).addClass('open');
+        $('body').css('overflow','hidden');
+        $("html, body").animate({ scrollTop: $(id).offset().top }, 500);
+      });
+
+      $('.panel-close').click(function(){
+        $(this).toggleClass('selected');
+        id = this.id;
+
+        idTemp = id.split('-');
+        id = idTemp[0].split('_');
+        $(idTemp[0]).toggleClass('selected');
+        panel = "#panel" + id[1];
+
+        var iframe = document.getElementById("youtubeVideo" + id[1]).getElementsByTagName("iframe")[0];
+        var videoSource = iframe.getAttribute('src');
+        if(videoSource != null && videoSource.indexOf("youtube") > -1) {
+          //Pause YouTube videos
+          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        } else {
+          //Pause Parleys videos
+          var videoDiv = iframe.contentWindow.$('#video');
+          var video = videoDiv[0].getElementsByTagName('video')[0];
+
+          if(!video.paused) {
+            var playBtn = iframe.contentWindow.$('.pl-play-btn')[0];
+            playBtn.click();
+          }
+        }
+
+        $(panel).removeClass('open');
+        $('body').css('overflow','scroll');
+      });
+    });
+  });
+</script>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,162 +172,7 @@ title: Events &amp; Talks
       opacity: 0;
       }
     </style>
-    <script>
-      $(document).ready(function(){
-        $.get('../events.json', function(data) {
-          var content = "";
-          var banners = "";
-          var panel ="";
-          $.each(data.events, function(i, item) {
-            id = i + 1;
 
-            var eventStartDate = moment(item.start_date);
-            var eventEndDate = moment(item.end_date);
-
-            var formattedDate;
-            if(eventStartDate.isSame(eventEndDate)) {
-              formattedDate = eventStartDate.format('D MMMM YYYY');
-            } else if(eventStartDate.month() == eventEndDate.month()) {
-              var monthYear = moment(eventStartDate.year() + '-' + (eventStartDate.month() + 1)).format('MMMM YYYY');
-              var days = eventStartDate.date() + '-' + eventEndDate.date();
-              formattedDate = days + " " + monthYear;
-            } else if(eventStartDate.year() == eventEndDate.year()) {
-              var year = moment(eventStartDate.year());
-              var start = moment((eventStartDate.month() + 1) + "-" + eventStartDate.date()).format('D MMMM');
-              var end = moment((eventEndDate.month() + 1) + "-" + eventEndDate.date()).format('D MMMM');
-              formattedDate = start + " - " + end + " " + year;
-            } else {
-              var startDate = (moment(eventStartDate.year() + '-' + (eventStartDate.month() + 1) + '-' + eventStartDate.date())).format('D MMMM YYYY');
-              var endDate = (moment(eventEndDate.year() + '-' + (eventEndDate.month() + 1) + '-' + eventEndDate.date())).format('D MMMM YYYY');
-              formattedDate = startDate + ' - ' + endDate;
-            }
-
-            var weekSinceEvent = moment(eventEndDate).add(14, "days");
-
-            if(moment().isBetween(moment(eventEndDate.add(1, "days")), weekSinceEvent)) {
-              content += '<div class="tile medium tile-slider" id="sliderTile-' + id + '"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg blur" style="z-index: 1; -webkit-filter: blur(5px);" src="' + item.image + '" alt="' + item.title + '" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">' + item.title + '</h2><h4 class="tile-meta occurred">' + 'This event has already occurred' + '</h4></div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div>';
-
-              panel += '<div class="panel" id="sliderPanel-' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media"><img class="panel-image" src="'+ item.image +'"/><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><h4 class="panel-date">' + formattedDate + '</h4><hr style="border: 1px solid #F05423"><div class="panel-des occurred">This event has already occurred. A video of the talk will be available soon.</div><hr style="border: 1px solid #F05423"><div class="panel-des">' + item.description + '</div></div></div></div></div>';
-
-              banners += '<img src="' + item.banner + '"/>'
-            } else if (moment().isBefore(eventEndDate)) {
-              content += '<div class="tile medium tile-slider" id="sliderTile-' + id + '"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg" src="' + item.image + '" alt="' + item.title + '" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">' + item.title + '</h2><h4 class="tile-meta">' + formattedDate + '</h4></div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div>';
-
-              panel += '<div class="panel" id="sliderPanel-' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media"><img class="panel-image" src="'+ item.image +'"/><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><h4 class="panel-date">' + formattedDate + '</h4><div class="panel-des">' + item.description + '<a href="' + item.link + '" class="btn">More Information</a></div></div></div></div></div>';
-
-              banners += '<img src="' + item.banner + '"/>'
-            }
-
-          })
-          $('.sliderTop').append(content);
-          $('.img-container').append(banners);
-          $('.slider-panel').append(panel);
-
-          $('.tile-slider').click(function(){
-            $(".mobile-menu").hide();
-            $(this).toggleClass('selected');
-            id = this.id;
-            id = id.split('-');
-            id = "#sliderPanel-" + id[1];
-            $(id).addClass('open');
-            $('body').css('overflow','hidden');
-          });
-
-          $('.panel-close').click(function(){
-            $(this).toggleClass('selected');
-            id = this.id;
-            idTemp = id.split('-');
-            id = idTemp[0].split('_');
-            $(idTemp[0]).toggleClass('selected');
-            panel = "#sliderPanel-" + id[1];
-            $(panel).removeClass('open');
-            $('body').css('overflow','scroll');
-          });
-
-          if(window.outerWidth > 480) {
-              $('.img-container').slick({
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  arrows: false,
-                  infinite: false,
-                  fade: true,
-                  asNavFor: '.sliderTop'
-              });
-              $('.sliderTop').slick({
-                  slidesToShow: 2,
-                  slidesToScroll: 1,
-                  asNavFor: '.img-container',
-                  autoplay: true,
-                  autoplaySpeed: 4000,
-                  infinite: false,
-                  dots: true,
-             });
-         } else {
-             $('.img-container').html('<img style=" width: 100%; "class="tile-media-bg" src="/images/assets/people.jpeg" alt="" />')
-             $('.sliderTop').slick({
-                 slidesToShow: 1,
-                 slidesToScroll: 1,
-                 autoplay: true,
-                 autoplaySpeed: 4000,
-                 infinite: false,
-                 dots: true,
-             });
-         }
-        setInterval(function() {
-          $('body').css('opacity', '1');
-        }, 300);
-        });
-
-        $.get('../talk.json', function(data) {
-          var content = "";
-          $.each(data.talks, function(i, item) {
-            id = i + 1;
-            content += '<div id="tile-' + id + '" class="tile small tile-talks"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg" src="' + item.image + '" alt="Blog Title" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">' + item.title + '</h2><h4 class="tile-meta">' + item.author + ' | ' + item.date + '</div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel" id="panel' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media" id="youtubeVideo' + id + '">' + (item.videoType=="youtube" ? '<iframe width="760" height="515" src="' + item.video + '?enablejsapi=1" frameborder="0" allowfullscreen></iframe>' : item.video) + '<section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><div class="panel-des">' + item.description + '</div></div></div></div></div>';
-          })
-          $('#talksGiven').append(content);
-
-          $('.tile-talks').click(function(){
-            $(".mobile-menu").hide();
-            $(this).toggleClass('selected');
-            id = this.id;
-            id = id.split('-');
-            id = "#panel" + id[1];
-            $(id).addClass('open');
-            $('body').css('overflow','hidden');
-            $("html, body").animate({ scrollTop: $(id).offset().top }, 500);
-          });
-
-          $('.panel-close').click(function(){
-            $(this).toggleClass('selected');
-            id = this.id;
-
-            idTemp = id.split('-');
-            id = idTemp[0].split('_');
-            $(idTemp[0]).toggleClass('selected');
-            panel = "#panel" + id[1];
-
-            var iframe = document.getElementById("youtubeVideo" + id[1]).getElementsByTagName("iframe")[0];
-            var videoSource = iframe.getAttribute('src');
-            if(videoSource != null && videoSource.indexOf("youtube") > -1) {
-              //Pause YouTube videos
-              iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-            } else {
-              //Pause Parleys videos
-              var videoDiv = iframe.contentWindow.$('#video');
-              var video = videoDiv[0].getElementsByTagName('video')[0];
-
-              if(!video.paused) {
-                var playBtn = iframe.contentWindow.$('.pl-play-btn')[0];
-                playBtn.click();
-              }
-            }
-
-            $(panel).removeClass('open');
-            $('body').css('overflow','scroll');
-          });
-        });
-      });
-    </script>
     <title>Sky Developers</title>
   </head>
 

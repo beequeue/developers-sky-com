@@ -4,8 +4,88 @@ title: Work For Us
 {% include head.html %}
 
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        if(window.outerWidth <= 768) {
+            $('#tileImg-1').appendTo('#row-1');
+            $('#tileImg-2').appendTo('#row-3');
+        }
+
+        $(window).on("resize", function(event) {
+            if(window.outerWidth <= 768) {
+                $('#tileImg-1').appendTo('#row-1');
+                $('#tileImg-2').appendTo('#row-3');
+            } else {
+                $('#tileImg-1').prependTo('#row-1');
+                $('#tileImg-2').prependTo('#row-3');
+            }
+        });
+
+        $('#tile-1').click(function() {
+            $(".mobile-menu").hide();
+
+            $(this).toggleClass('selected');
+            id = this.id;
+            id = id.split('-');
+            id = "#panel" + id[1];
+            $(id).addClass('open');
+            $('body').css('overflow','hidden');
+            $("html, body").animate({ scrollTop: $(id).offset().top }, 500);
+        });
+
+        $('.panel-close').click(function(){
+            $(this).toggleClass('selected');
+            id = this.id;
+            idTemp = id.split('-');
+            id = idTemp[0].split('_');
+            $(idTemp[0]).toggleClass('selected');
+            panel = "#panel" + id[1];
+            $(panel).removeClass('open');
+            $('body').css('overflow','scroll');
+        });
+    });
+
+    function submitForm(){
+      var captcha = grecaptcha.getResponse();
+      if(captcha.length != 0) {
+        var name = $('#fullName').val() + "\n";
+        var email = $('#email').val() + "\n";
+        var skills = ["Java", "CSharp", "Cpp", "Mobile", "Javascript", "HTML", "CSS", "PHP", "TDD", "ContinuousInt", "Agile"];
+        var skillsFormatted = "";
+        for(i = 0; i < skills.length; i++) {
+            if ($('#' + skills[i]).is(":checked")) {
+              if(skills[i] == "Cpp") {
+                skillsFormatted += "- " + "C++" + "\n";
+              } else if(skills[i] == "CSharp") {
+                skillsFormatted += "- " + "C#" + "\n";
+              } else if(skills[i] == "ContinuousInt") {
+                skillsFormatted += "- " + "Continuous Integration" + "\n";
+              } else {
+                skillsFormatted += "- " + skills[i] + "\n";
+              }
+            }
+        }
+        var otherSkills = $('#other').val() + "\n";
+        var message = $('#message').val() + "\n";
+        var linkedIn = $('#linkedin').val() + "\n";
+        var github = $('#github').val() + "\n";
+
+        $.ajax({
+          url: "//formspree.io/Annelisa.Dinwoodie@sky.uk",
+          //url: "//formspree.io/craig.rees2@sky.uk",
+          method: "POST",
+          data: {Name: name, Email: email, Skills: skillsFormatted, Other: otherSkills, LinkedIn: linkedIn, GitHub: github, Message: message},
+          success: function(data) {
+            $("#contact-form").children().hide();
+            $("#contact-form").append("<p id='thankyou' style='text-align: center; font-size: 35px;'>Thank you for contacting us</p>");
+          },
+          dataType: "json",
+        });
+      }
+    }
+</script>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -238,85 +318,6 @@ title: Work For Us
                 </div>
             </section>
         </div>
-        <script type="text/javascript">
-            $(document).ready(function(){
-
-                if(window.outerWidth <= 768) {
-                    $('#tileImg-1').appendTo('#row-1');
-                    $('#tileImg-2').appendTo('#row-3');
-                }
-                $(window).on("resize", function(event) {
-                    if(window.outerWidth <= 768) {
-                        $('#tileImg-1').appendTo('#row-1');
-                        $('#tileImg-2').appendTo('#row-3');
-                    } else {
-                        $('#tileImg-1').prependTo('#row-1');
-                        $('#tileImg-2').prependTo('#row-3');
-                    }
-                });
-
-                $('#tile-1').click(function() {
-                    $(".mobile-menu").hide();
-
-                    $(this).toggleClass('selected');
-                    id = this.id;
-                    id = id.split('-');
-                    id = "#panel" + id[1];
-                    $(id).addClass('open');
-                    $('body').css('overflow','hidden');
-                    $("html, body").animate({ scrollTop: $(id).offset().top }, 500);
-                });
-
-                $('.panel-close').click(function(){
-                    $(this).toggleClass('selected');
-                    id = this.id;
-                    idTemp = id.split('-');
-                    id = idTemp[0].split('_');
-                    $(idTemp[0]).toggleClass('selected');
-                    panel = "#panel" + id[1];
-                    $(panel).removeClass('open');
-                    $('body').css('overflow','scroll');
-                });
-            });
-
-            function submitForm(){
-              var captcha = grecaptcha.getResponse();
-              if(captcha.length != 0) {
-                var name = $('#fullName').val() + "\n";
-                var email = $('#email').val() + "\n";
-                var skills = ["Java", "CSharp", "Cpp", "Mobile", "Javascript", "HTML", "CSS", "PHP", "TDD", "ContinuousInt", "Agile"];
-                var skillsFormatted = "";
-                for(i = 0; i < skills.length; i++) {
-                    if ($('#' + skills[i]).is(":checked")) {
-                      if(skills[i] == "Cpp") {
-                        skillsFormatted += "- " + "C++" + "\n";
-                      } else if(skills[i] == "CSharp") {
-                        skillsFormatted += "- " + "C#" + "\n";
-                      } else if(skills[i] == "ContinuousInt") {
-                        skillsFormatted += "- " + "Continuous Integration" + "\n";
-                      } else {
-                        skillsFormatted += "- " + skills[i] + "\n";
-                      }
-                    }
-                }
-                var otherSkills = $('#other').val() + "\n";
-                var message = $('#message').val() + "\n";
-                var linkedIn = $('#linkedin').val() + "\n";
-                var github = $('#github').val() + "\n";
-
-                $.ajax({
-                  url: "//formspree.io/Annelisa.Dinwoodie@sky.uk",
-                  method: "POST",
-                  data: {Name: name, Email: email, Skills: skillsFormatted, Other: otherSkills, LinkedIn: linkedIn, GitHub: github, Message: message},
-                  success: function(data) {
-                    $("#contact-form").children().hide();
-                    $("#contact-form").append("<p id='thankyou' style='text-align: center; font-size: 35px;'>Thank you for contacting us</p>");
-                  },
-                  dataType: "json",
-                });
-              }
-            }
-        </script>
         {% include footer.html %}
     </body>
 </html>

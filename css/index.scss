@@ -52,3 +52,34 @@
         }
     }
 }
+
+.tile-container {
+    .tile.small-long {
+        width: 64%;
+        float: left;
+        margin-right: 1.31669%;
+        margin-left: 1.31669%;
+        padding: 15px 30px;
+        border: none;
+        background-color: #734993;
+        text-align: right;
+        color: #fff;
+        @media(max-width: 1192px) {
+            width: 97.36662%;
+        }
+        .tile-content {
+            padding-bottom: 0;
+        }
+        p {
+            padding-bottom: 10px;
+        }
+        a {
+            padding-bottom: 12px;
+            color: #fff;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

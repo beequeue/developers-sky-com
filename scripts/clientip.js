@@ -17,7 +17,7 @@ function getClientIP(fromInternal) {
      }
    } else {
      if(clientIP.indexOf("90.216.134.") > -1 || clientIP.indexOf("90.216.150.") > -1) {
-       window.location = "/internalHtml"
+       window.location = "/internal"
      }
    }
 }
