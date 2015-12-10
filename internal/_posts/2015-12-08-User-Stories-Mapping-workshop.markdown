@@ -19,10 +19,11 @@ If you find any of the questions above might be relevant to your team then User 
 ### The Workshop
 On the 10th of December we will run a User Story mapping workshop at the SNS office in London
 to learn the main aspects of the Story Mapping approach as described by Jeff Patton on his milestone book: 
-[http://www.amazon.co.uk/User-Story-Mapping-Discover-Product/dp/1491904909], 
+[http://www.amazon.co.uk/User-Story-Mapping-Discover-Product/dp/1491904909](), 
 have fun and get used to collaborate together; Developers, Product Owners and anyone with a  stake on the success of your product.
 
 Stay tuned for more updates!
 
 Diego Minelli, Reinu Kanda
+
 Sky Go
