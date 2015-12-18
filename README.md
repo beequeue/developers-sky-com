@@ -56,7 +56,7 @@ title:  "Sky at Google I/O"
 date:   2015-05-12 08:52:19
 author: Donald Knuth
 categories: conferences
-image: images/test.png
+image: /images/test.png
 excerpt: "Sky are attending Google I/O - here's what we're planning to see any why"
 ---
 ```
