@@ -121,6 +121,10 @@ a {
     clear: both;
     margin-top: -45px;
 
+    .tile-hr {
+      border: 1px solid #613e7c;
+    }
+
     &:after {
         content: " ";
         display: block;

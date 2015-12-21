@@ -72,8 +72,8 @@ title: Work For Us
         var github = $('#github').val() + "\n";
 
         $.ajax({
-          url: "//formspree.io/Annelisa.Dinwoodie@sky.uk",
-          //url: "//formspree.io/craig.rees2@sky.uk",
+          //url: "//formspree.io/Annelisa.Dinwoodie@sky.uk",
+          url: "//formspree.io/craig.rees2@sky.uk",
           method: "POST",
           data: {Name: name, Email: email, Skills: skillsFormatted, Other: otherSkills, LinkedIn: linkedIn, GitHub: github, Message: message},
           success: function(data) {
@@ -101,7 +101,7 @@ title: Work For Us
             <section class="tile-container top">
                 <div class="description small-long">
                     <h2>Work For Us</h2>
-                    <hr>
+                    <hr class="tile-hr">
                     <p>As part of one of our high performance delivery teams you’ll leverage cutting edge technology to build systems at scale and drive Sky forward, if this is a challenge that you feel equipped to meet then send us your details via the 'Apply Now' link to the right.</p>
                 </div>
                 <div class="tile small apply" id="tile-1">

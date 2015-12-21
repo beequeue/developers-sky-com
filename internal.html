@@ -8,6 +8,8 @@ title: Index
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
+  $("#Blog").addClass("selected");
+  
   var numOfBlogs = {{ site.posts | size }};
   var className = "";
   var posts = "{\"posts\":[";
@@ -133,7 +135,7 @@ $(document).ready(function(){
                     <div class="tile-inner">
                         <div class="tile-content">
                             <h2>Join the team that's always changing the game</h2>
-                            <hr>
+                            <hr class='tile-hr'>
                             <p>Discover every part of our exciting business; how talented people are key to our success and where you could be joining us.</p>
                             <a href="/workforus"><h3>Join our team <span class="mega-octicon octicon-arrow-right"></span></h3></a>
                         </div>

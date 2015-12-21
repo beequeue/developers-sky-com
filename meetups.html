@@ -8,8 +8,9 @@ title: Events &amp; Talks
     $.get('../events.json', function(data) {
       var content = "";
       var banners = "";
-      var panel ="";
-      $.each(data.events, function(i, item) {
+      var panel = "";
+
+      $.each(data, function(i, item) {
         id = i + 1;
 
         var eventStartDate = moment(item.start_date);
@@ -38,7 +39,7 @@ title: Events &amp; Talks
         if(moment().isBetween(moment(eventEndDate.add(1, "days")), weekSinceEvent)) {
           content += '<div class="tile medium tile-slider" id="sliderTile-' + id + '"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg blur" style="z-index: 1; -webkit-filter: blur(5px);" src="' + item.image + '" alt="' + item.title + '" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">' + item.title + '</h2><h4 class="tile-meta occurred">' + 'This event has already occurred' + '</h4></div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div>';
 
-          panel += '<div class="panel" id="sliderPanel-' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media"><img class="panel-image" src="'+ item.image +'"/><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><h4 class="panel-date">' + formattedDate + '</h4><hr style="border: 1px solid #F05423"><div class="panel-des occurred">This event has already occurred. A video of the talk will be available soon.</div><hr style="border: 1px solid #F05423"><div class="panel-des">' + item.description + '</div></div></div></div></div>';
+          panel += '<div class="panel" id="sliderPanel-' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media"><img class="panel-image" src="'+ item.image +'"/><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><h4 class="panel-date">' + formattedDate + '</h4><hr style="border: 1px solid #F05423"><div class="panel-des occurred">This event has already occurred. A video of the talk will be available soon.</div><hr style="border: 1px solid #F05423"><div class="panel-des">' + item.description + '<a href="' + item.link + '" class="btn">More Information</a></div></div></div></div></div>';
 
           banners += '<img src="' + item.banner + '"/>'
         } else if (moment().isBefore(eventEndDate)) {
@@ -46,7 +47,7 @@ title: Events &amp; Talks
 
           panel += '<div class="panel" id="sliderPanel-' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media"><img class="panel-image" src="'+ item.image +'"/><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><h4 class="panel-date">' + formattedDate + '</h4><div class="panel-des">' + item.description + '<a href="' + item.link + '" class="btn">More Information</a></div></div></div></div></div>';
 
-          banners += '<img src="' + item.banner + '"/>'
+          banners += '<img class="banner-image" src="' + item.banner + '"/>'
         }
 
       })
@@ -111,11 +112,23 @@ title: Events &amp; Talks
 
     $.get('../talk.json', function(data) {
       var content = "";
-      $.each(data.talks, function(i, item) {
+      $.each(data, function(i, item) {
         id = i + 1;
-        content += '<div id="tile-' + id + '" class="tile small tile-talks"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg" src="' + item.image + '" alt="Blog Title" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">' + item.title + '</h2><h4 class="tile-meta">' + item.author + ' | ' + item.date + '</div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel" id="panel' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media" id="youtubeVideo' + id + '">' + (item.videoType=="youtube" ? '<iframe width="760" height="515" src="' + item.video + '?enablejsapi=1" frameborder="0" allowfullscreen></iframe>' : item.video) + '<section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><div class="panel-des">' + item.description + '</div></div></div></div></div>';
+        content += '<div id="tile-' + id + '" class="tile small tile-talks"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg" src="' + item.image + '" alt="Blog Title" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">' + item.title + '</h2><h4 class="tile-meta">' + item.author + ' | ' + item.date + '</div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel" id="panel' + id + '"><div class="panel-inner"><div class="panel-header"><a class="panel-close" id="tile_' + id + '-close"><span class="skycon--close"></span>Close</a></div><div class="panel-content"><div class="panel-media" id="youtubeVideo' + id + '">' + (item.videoType=="youtube" ? '<iframe width="760" height="515" src="' + item.video + '?enablejsapi=1" frameborder="0" allowfullscreen></iframe>' : item.video) + '<section><div class="shine top"></div><div class="shine bottom"></div></section></div><div class="panel-info"><h2 class="panel-title">' + item.title + '</h2><div class="panel-des">' + item.description + '<a href="' + item.link + '" class="btn">More Information</a></div></div></div></div></div>';
       })
       $('#talksGiven').append(content);
+
+      $(".tile-media-bg").error(function(){
+          $(this).attr('src', '/images/assets/noImage.jpg');
+      });
+
+      $(".panel-image").error(function(){
+          $(this).attr('src', '/images/assets/noImage.jpg');
+      });
+
+      $(".banner-image").error(function(){
+          $(this).attr('src', '/images/assets/noBannerImage.jpg');
+      });
 
       $('.tile-talks').click(function(){
         $(".mobile-menu").hide();
@@ -155,7 +168,7 @@ title: Events &amp; Talks
 
         $(panel).removeClass('open');
         $('body').css('overflow','scroll');
-      });
+        });
     });
   });
 </script>
