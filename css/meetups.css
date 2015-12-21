@@ -139,6 +139,12 @@
 .tile-media-bg.blur {
   z-index: 1;
   -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -ms-filter: blur(4px);
+  -o-filter: blur(4px);
+  filter: blur(4px);
+  filter: url(#blur);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
 }
 
 .panel-des.occurred {

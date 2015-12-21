@@ -9,7 +9,7 @@ title: Index
 <script type="text/javascript">
 $(document).ready(function(){
   $("#Blog").addClass("selected");
-  
+
   var numOfBlogs = {{ site.posts | size }};
   var className = "";
   var posts = "{\"posts\":[";
@@ -44,6 +44,7 @@ $(document).ready(function(){
     if(windowSize > 1192) {
       createTile('small', postCount);
       blogAmount = numOfBlogs - 1;
+      $('.tile.small-long').height($('.tile.small').height() - 20);
     } else {
       blogAmount = numOfBlogs;
     }
@@ -66,8 +67,6 @@ $(document).ready(function(){
             $('#tiles').append('<div class="tile ' + getClassName(blogAmount) + '"><div class="tile-inner"><a class="tile-link"><div class="tile-bg"></div><div class="tile-media"><img class="tile-media-bg" src="{{post.image}}" alt="Blog Title" /></div><div class="tile-content"><div class="tile-content-inner"><h2 class="tile-title">{{ post.title }}</h2></div></div></a></div><section><div class="shine top"></div><div class="shine bottom"></div></section></div>');
         {% endfor %}
     }
-
-    $('.tile.small-long').height($('.tile.small').height() - 20);
   }
 
   function getClassName(amount) {
