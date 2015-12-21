@@ -32,7 +32,7 @@ $(document).ready(function(){
       populateTiles(window.outerWidth);
     }, 500);
   });
-
+  
   function populateTiles(windowSize) {
     $('.tile.small').remove();
     $('.tile.medium').remove();
@@ -45,6 +45,7 @@ $(document).ready(function(){
       blogAmount = numOfBlogs - 1;
       $('.tile.small-long').height($('.tile.small').height() - 20);
     } else {
+      $('.tile.small-long').height('auto');
       blogAmount = numOfBlogs;
     }
 
@@ -109,6 +110,7 @@ $(document).ready(function(){
       postCount++;
   }
 });
+
 </script>
 
 <!DOCTYPE html>
