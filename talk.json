@@ -1,5 +1,4 @@
-{
-  "talks": [{
+"talks": [{
     "title": "Droidcon UK 2015",
     "author": "Andrew Jack",
     "link": "https://skillsmatter.com/skillscasts/6671-build-your-own-video-streaming-app",
@@ -120,4 +119,3 @@
     "video": "https://www.youtube.com/embed/OMLDHNaUMB8",
     "image": "/images/events/logo/europython2012.png"
   }]
-}
