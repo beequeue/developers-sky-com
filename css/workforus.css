@@ -1,13 +1,40 @@
-@charset "UTF-8";
+/*
+-----------------------------------------
+ > Mixins <
+-----------------------------------------
+*/
 /*
 -----------------------------------------
  > Work For Us Page <
 -----------------------------------------
 */
+.rc-anchor-normal {
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .title {
+    width: 85%;
+  }
+}
+
 .polaris-wrapper.workforus .hero-wrapper {
   background-image: url(/images/assets/workforus.jpg);
   background-size: cover;
-  background-position: 100px -345px;
+  background-position: 0 -345px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .hero-wrapper {
+    background-position: 0 -200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaris-wrapper.workforus .hero-wrapper {
+    background-position: 0 -100px;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.top {
@@ -16,10 +43,32 @@
   margin-top: -40px;
 }
 
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.top {
+    padding: 0;
+    margin-top: 0;
+  }
+}
+
 .polaris-wrapper.workforus .tile-container.top .tile.small.apply {
   width: 25%;
   margin-left: 8%;
   margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.top .tile.small.apply {
+    width: 50%;
+    margin: 0 auto;
+    float: none;
+    display: table;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaris-wrapper.workforus .tile-container.top .tile.small.apply {
+    width: 65%;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.top .tile.small.apply .tile-media {
@@ -69,6 +118,14 @@
   color: #fff;
 }
 
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.top .description.small-long {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 8%;
+  }
+}
+
 .polaris-wrapper.workforus .tile-container.top .description.small-long h2 {
   margin: 5px 0 10px;
 }
@@ -89,14 +146,34 @@
   color: #fff;
 }
 
+@media (min-width: 768px) and (max-width: 913px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form {
+    width: 75%;
+    display: table;
+    margin: 0 auto;
+  }
+}
+
 .polaris-wrapper.workforus .tile-container.top .panel form .form-left {
   width: 50%;
   float: left;
 }
 
+@media (max-width: 913px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form .form-left {
+    width: 100%;
+  }
+}
+
 .polaris-wrapper.workforus .tile-container.top .panel form .form-right {
   width: 50%;
   float: right;
+}
+
+@media (max-width: 913px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form .form-right {
+    width: 100%;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.top .panel form .row {
@@ -108,45 +185,105 @@
 }
 
 .polaris-wrapper.workforus .tile-container.top .panel form .row.form textarea {
-  min-width: 400px;
-  max-width: 400px;
+  max-width: 100%;
   max-height: 250px;
+}
+
+.polaris-wrapper.workforus .tile-container.top .panel form .row.form.captcha {
+  padding-left: 25%;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form .row.form.captcha {
+    padding-left: 0;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.top .panel form .row.checkbox {
   margin: 0 0 8px 0;
+  float: left;
+  width: 100%;
 }
 
-.polaris-wrapper.workforus .tile-container.top .panel form .row.no-label, .polaris-wrapper.workforus .tile-container.top .panel form .g-recaptcha, .polaris-wrapper.workforus .tile-container.top .panel form .form-submit {
+.polaris-wrapper.workforus .tile-container.top .panel form input[type="checkbox"] {
+  float: left;
+}
+
+.polaris-wrapper.workforus .tile-container.top .panel form .row.no-label, .polaris-wrapper.workforus .tile-container.top .panel form .form-submit {
   margin-left: 25%;
   margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form .row.no-label, .polaris-wrapper.workforus .tile-container.top .panel form .form-submit {
+    margin-left: 0;
+  }
+}
+
 .polaris-wrapper.workforus .tile-container.top .panel form .row > label {
-  width: 25% !important;
+  width: 25%;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form .row > label {
+    width: 75%;
+    margin-bottom: 5px;
+    text-align: left;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.top .panel form .row > input[type="text"], .polaris-wrapper.workforus .tile-container.top .panel form .row > input[type="email"], .polaris-wrapper.workforus .tile-container.top .panel form .row > textarea {
   width: 400px;
 }
 
-.polaris-wrapper.workforus .tile-container.top .panel form #skills {
-  margin-left: 10%;
+@media (max-width: 1277px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form .row > input[type="text"], .polaris-wrapper.workforus .tile-container.top .panel form .row > input[type="email"], .polaris-wrapper.workforus .tile-container.top .panel form .row > textarea {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form .row > input[type="text"], .polaris-wrapper.workforus .tile-container.top .panel form .row > input[type="email"], .polaris-wrapper.workforus .tile-container.top .panel form .row > textarea {
+    width: 100%;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.top .panel form #other {
   width: 332px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form #other {
+    width: 100%;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.top .panel form .form-submit {
   margin-top: 80px;
-  margin-left: 49%;
+  margin-left: calc(50% - 32px);
   width: 100px;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form .form-submit {
+    margin-top: 40px;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.top .panel form .g-recaptcha {
   transform: scale(1.325);
   transform-origin: 0 0;
+}
+
+@media (max-width: 1277px) {
+  .polaris-wrapper.workforus .tile-container.top .panel form .g-recaptcha {
+    width: 304px;
+    margin: 50px auto 0;
+    padding-right: 20px;
+    transform: scale(1);
+    transform-origin: center;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.top .panel form .italicLabel {
@@ -163,29 +300,39 @@
   margin-top: -30px;
 }
 
-.polaris-wrapper.workforus .tile-container.middle blockquote {
+.polaris-wrapper.workforus .tile-container.middle .quote {
   border: none;
   text-align: center;
-  margin: 100px 0 70px 0;
-  quotes: "“" "”" "‘" "’";
+  margin: 100px auto 70px;
 }
 
-.polaris-wrapper.workforus .tile-container.middle blockquote h2 {
-  display: inline-block;
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.middle .quote {
+    width: 80%;
+  }
 }
 
-.polaris-wrapper.workforus .tile-container.middle blockquote:before {
-  content: open-quote;
-  font-weight: bold;
-  font-size: 100px;
+.polaris-wrapper.workforus .tile-container.middle .quote .quote_marks {
+  font-size: 70px;
   color: #ed0677;
 }
 
-.polaris-wrapper.workforus .tile-container.middle blockquote:after {
-  content: close-quote;
-  font-weight: bold;
-  font-size: 100px;
-  color: #ed0677;
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.middle .quote .quote_marks {
+    font-size: 50px;
+    line-height: 30px;
+  }
+}
+
+.polaris-wrapper.workforus .tile-container.middle .quote h2 {
+  display: inline;
+}
+
+@media (max-width: 992px) {
+  .polaris-wrapper.workforus .tile-container.middle .quote h2 {
+    font-size: 32px;
+    line-height: 45px;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.middle .text {
@@ -203,8 +350,13 @@
   margin-top: 40px;
 }
 
+.polaris-wrapper.workforus .tile-container.bottom .title {
+  width: 75%;
+}
+
 .polaris-wrapper.workforus .tile-container.bottom .row {
   margin: 25px 0;
+  width: 100%;
   float: left;
 }
 
@@ -213,6 +365,21 @@
   width: 66%;
   padding: 0 20px;
   margin-bottom: 22px;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.bottom .row .description.small-long {
+    width: 75%;
+    margin: 0 auto 22px;
+    display: table;
+    float: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaris-wrapper.workforus .tile-container.bottom .row .description.small-long {
+    width: 100%;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.bottom .row .description.small-long h2 {
@@ -249,6 +416,16 @@
 
 .polaris-wrapper.workforus .tile-container.bottom .row.four hr {
   border-color: #f05423;
+}
+
+@media (max-width: 768px) {
+  .polaris-wrapper.workforus .tile-container.bottom .row .tile {
+    width: 75%;
+    padding: 0;
+    margin: 0 auto 22px;
+    display: table;
+    float: none;
+  }
 }
 
 .polaris-wrapper.workforus .tile-container.bottom .row .tile .tile-link:hover {

@@ -1,32 +1,23 @@
+@import 'mixin.scss';
+
 .header {
     height: 100px;
 }
 
-.dev-logo-text{
-    font-size: 25px;
-}
-
 .dev-logo {
-    font-size: 20px;
     float: left;
     margin: 0 3%;
-    line-height: 45px;
+    display:block;
+    text-decoration: none;
+    margin-top: 18px;
+}
 
-    a {
-        display:block;
-        text-decoration: none;
-        margin-top: 18px;
-        line-height: 45px;
 
-//        &:hover {
-//            border-bottom: 2px solid #0073c5;
-//            color: #0070a5;
-//            margin-bottom:-2px;
-//        }
-        .dev-logo-image {
-        vertical-align: middle;
-        }
-    }
+@include tablet {
+  .dev-logo img {
+    margin-top: -6px;
+    margin-left: -20px;
+  }
 }
 
 .menu_button {
@@ -51,6 +42,6 @@
     float: left;
     -webkit-transition: all 0.2s ease-out;
     margin-bottom: 0;
-    width: 71%;
-    border-bottom: none;
+    width: 49% !important;
+    border-bottom: none !important;
 }

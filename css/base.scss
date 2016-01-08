@@ -1,3 +1,5 @@
+@import 'mixin.scss';
+
 /*
 -----------------------------------------
  > Misc. <
@@ -9,12 +11,98 @@ body {
     padding: 0;
 }
 
-.skycom-container.legal {
-    margin: 0 14%;
+.container.footer {
+    max-width: 974px;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    text-align: left;
 }
 
 article {
     padding: 20px 0;
+}
+
+code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+a {
+  word-wrap: break-word;
+}
+
+
+/*
+-----------------------------------------
+ > Nav Bar <
+-----------------------------------------
+*/
+
+.main-menu {
+  @include tablet {
+    display: none;
+  }
+}
+
+@include tablet {
+  .hamburger {
+    display: block !important;
+  }
+}
+
+.hamburger {
+  font-family: SkyTextRegular;
+  display: none;
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 45px;
+  padding: 0px 15px 0px 15px;
+  color: #333;
+  border: 0;
+  font-size: 1.4em;
+  cursor: pointer;
+  outline: none;
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.mobile-menu {
+  display: none;
+  z-index: 10;
+  font-weight: bold;
+  font-size: 0.8em;
+  width: 100%;
+  background: #333;
+  position: absolute;
+  text-align: center;
+  top: 62px;
+}
+.mobile-menu a {
+  text-decoration: none;
+  margin: 0px;
+  color:#fff;
+  width: 100%;
+}
+.mobile-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+}
+.mobile-menu a li:hover{
+  display: block;
+  background:#444;
+  padding:15px 0 15px 0;
+  border-bottom:#4a4a4a 1px solid;
+}
+
+.mobile-menu ul a li {
+  display: block;
+  padding:15px 0 15px 0;
+  border-bottom:#3a3a3a 1px solid;
 }
 
 /*
@@ -32,6 +120,10 @@ article {
     position: relative;
     clear: both;
     margin-top: -45px;
+
+    .tile-hr {
+      border: 1px solid #613e7c;
+    }
 
     &:after {
         content: " ";
@@ -59,12 +151,24 @@ article {
             float: left;
             margin-left: 1.31669%;
             margin-right: 1.31669%;
+            @include tablet {
+                width: 47.31669%;
+            }
+            @include mobile {
+                width: 97.36662%;
+            }
         }
         &.medium {
             width: 47.36662%;
             float: left;
             margin-left: 1.31669%;
             margin-right: 1.31669%;
+            @include tablet {
+                width: 47.31669%;
+            }
+            @include mobile {
+                width: 97.36662%;
+            }
         }
         &.large {
             width: 97.36662%;
@@ -146,6 +250,9 @@ article {
                 font-family: SkyTextRegular,Helvetica,Arial,Sans-Serif;
                 font-weight: 400;
                 transition: all .4s ease;
+                @include tablet {
+                    font-size: 28px;
+                }
             }
         }
     }
@@ -188,9 +295,6 @@ article {
     background-color: #222;
     clear: both;
     float: none;
-//    margin-right: -16.66667%;
-//    margin-bottom: 20px;
-//    margin-left: -16.66667%;
     max-height: 200vh;
     position: fixed;
     overflow: hidden;
@@ -204,8 +308,6 @@ article {
         line-height: 100vh;
         position: relative;
         max-width: 100%;
-//        margin-left: auto;
-//        margin-right: auto;
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
         width: 100%;
@@ -254,9 +356,10 @@ article {
             .panel-media {
                 width: 70%;
                 float: left;
-//                margin-left: .71429%;
-//                margin-right: .71429%;
                 position: relative;
+                @include tablet {
+                    width: 95%;
+                }
                 iframe, img {
                     width: 100%;
                     display: block;
@@ -297,8 +400,17 @@ article {
                 width: 27.14286%;
                 float: left;
                 margin-left: 2%;
+                @include tablet {
+                    width: 95%;
+                    margin-top: 10px;
+                }
                 .panel-title {
                     margin-top: 0;
+                }
+                .panel-des .btn {
+                    margin: 0 auto;
+                    display: table;
+                    color: #fff;
                 }
             }
         }

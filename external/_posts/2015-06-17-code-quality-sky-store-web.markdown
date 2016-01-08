@@ -2,7 +2,6 @@
 layout: post
 title: "Maintaining code quality in Sky Store web"
 date: 2015-06-17
-author: Christopher Cook
 categories: coding
 image: /images/blogs/eslint.png
 excerpt: "A summary of the tools and practices we use to try and achieve code quality in Sky Store Web."
