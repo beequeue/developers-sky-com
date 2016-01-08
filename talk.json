@@ -85,7 +85,7 @@
     "date": "25 June 2015",
     "description": "<p>Sky hosted its first networking event to celebrate Women in Technology, with talks from:</p><ul><li><b>Didier Lebrat</b> - CTO at Sky</li><br /><li><b>Bella Vuillermoz</b> - Director of Women in Leadership at Sky</li><br /><li><b>Kimberley Brown</b> and <b>Stephanie Holmes</b> - Senior Analyst and Associate Developer at Sky</li><br /><li><b>Amelia Humfress</b> - CEO of Steer</li><br /><li><b>Radhika Sanghani</b> - Journalist at The Guardian</li></ul>",
     "video": "https://www.youtube.com/embed/bXfXk0hAv0s",
-    "image": "/images/events/logo/womenTech.jpg"
+    "image": "/images/events/logo/womenintech.png"
   }, {
     "title": "Devoxx UK 2015",
     "author": "Tom Maule",
@@ -93,7 +93,7 @@
     "date": "19 June 2015",
     "description": "<p><b>Tom Maule</b> talks about the scalability challenges NOW TV faces with linear streaming, with reference to large sporting events and the popular fantasy drama; Game of Thrones.</p>",
     "video": "",
-    "image": "/images/events/logo/devox.jpg"
+    "image": "/images/events/logo/devoxx.jpeg"
   }, {
     "title": "Couchbase London Meetup",
     "author": "Julien Gagnet",
