@@ -5,7 +5,7 @@
     "date": "29 October 2015",
     "description": "<b>Andrew Jack</b> talks about, how to add video streaming to your Android apps. (Video can be found on the <a href='https://skillsmatter.com/skillscasts/6671-build-your-own-video-streaming-app' target='_blank' >skills matter website</a>)",
     "video": "/external/droidcon-image.html",
-    "videoType": "other",
+    "videoType": "youtube",
     "image": "/images/events/logo/droidcon-andrewjack.jpg"
   }, {
     "title": "Angular Connect",
