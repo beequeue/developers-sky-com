@@ -5,6 +5,7 @@
     "date": "29 October 2015",
     "description": "<b>Andrew Jack</b> talks about, how to add video streaming to your Android apps. (Video can be found on the <a href='https://skillsmatter.com/skillscasts/6671-build-your-own-video-streaming-app' target='_blank' >skills matter website</a>)",
     "video": "/external/droidcon-image.html",
+    "videoType": "other",
     "image": "/images/events/logo/droidcon-andrewjack.jpg"
   }, {
     "title": "Angular Connect",
@@ -13,6 +14,7 @@
     "date": "23 July 2015",
     "description": "<p><b>Ricardo Mallols</b> talks about the sign up journey at Sky.</p>",
     "video": "https://www.youtube.com/embed/TPNOrSAb8Wk",
+    "videoType": "youtube",
     "image": "/images/events/logo/angular.png"
   }, {
     "title": "Ruby Microservices",
@@ -21,6 +23,7 @@
     "date": "23 July 2015",
     "description": "<p><b>Andrew Appleton</b> from Heroku, talks about Ruby Microservices at the Leeds Tech Hub Meetup 2015.</p>",
     "video": "https://www.youtube.com/embed/0f90qXL3cB0",
+    "videoType": "youtube",
     "image": "/images/events/logo/rubyMicroLTH.png"
   }, {
     "title": "JavaScript Workflow",
@@ -29,6 +32,7 @@
     "date": "23 July 2015",
     "description": "<p><b>Jack Franklin</b> from GoCardless, talks about the JavaScript workflow at the Leeds Tech Hub Meetup 2015.</p>",
     "video": "https://www.youtube.com/embed/ErNLqqBpPQk",
+    "videoType": "youtube",
     "image": "/images/events/logo/jsWorkFlowLTH.png"
   }, {
     "title": "Make your Tech choices work for you",
@@ -37,6 +41,7 @@
     "date": "23 July 2015",
     "description": "<p><b>Richard McIntyre</b> talks about how to make your Tech choices work for you at the Leeds Tech Hub Meetup 2015.</p>",
     "video": "https://www.youtube.com/embed/YaJDXpzOvak",
+    "videoType": "youtube",
     "image": "/images/events/logo/techChoicesLTH.png"
   }, {
     "title": "APIs and WebHooks",
@@ -45,6 +50,7 @@
     "date": "23 July 2015",
     "description": "<p><b>Phil Nash</b> from Twilio, talks about API's and WebHooks. at the Leeds Tech Hub Meetup 2015</p>",
     "video": "https://www.youtube.com/embed/gPCpnVn6Dtw",
+    "videoType": "youtube",
     "image": "/images/events/logo/APIsLTH.png"
   }, {
     "title": "Unit Testing on iOS",
@@ -53,6 +59,7 @@
     "date": "9 July 2015",
     "description": "<p><b>Cate Huston</b> talks about Unit Testing on iOS at the Leeds Tech Hub Meetup 2015.</p>",
     "video": "https://www.youtube.com/embed/5GVoYbZUMg8",
+    "videoType": "youtube",
     "image": "/images/events/logo/unitTestiOSLTH.png"
   }, {
     "title": "Fundamentals of Mobile UX",
@@ -61,6 +68,7 @@
     "date": "9 July 2015",
     "description": "<p><b>Christopher Compston</b> talks about the Fundamentals of Mobile UX at the Leeds Tech Hub Meetup 2015.</p>",
     "video": "https://www.youtube.com/embed/QjF2TMvKVTQ",
+    "videoType": "youtube",
     "image": "/images/events/logo/fundamentalsMobileUXLTH.png"
   }, {
     "title": "MVC",
@@ -69,6 +77,7 @@
     "date": "9 July 2015",
     "description": "<p><b>Tim Antrobus</b> talks about MVC at the Leeds Tech Hub Meetup 2015.</p>",
     "video": "https://www.youtube.com/embed/3hlgHTSenuw",
+    "videoType": "youtube",
     "image": "/images/events/logo/mvcLTH.png"
   }, {
     "title": "Native vs Hybrid",
@@ -77,6 +86,7 @@
     "date": "9 July 2015",
     "description": "<p><b>Tim Medcalf</b> talks about Native vs Hybrid at the Leeds Tech Hub Meetup 2015. Why you should still consider native despite this multi-platform world.</p>",
     "video": "https://www.youtube.com/embed/U7_OOQqfPqM",
+    "videoType": "youtube",
     "image": "/images/events/logo/nativeHybridLTH.png"
   }, {
     "title": "Women In Technology",
@@ -85,6 +95,7 @@
     "date": "25 June 2015",
     "description": "<p>Sky hosted its first networking event to celebrate Women in Technology, with talks from:</p><ul><li><b>Didier Lebrat</b> - CTO at Sky</li><br /><li><b>Bella Vuillermoz</b> - Director of Women in Leadership at Sky</li><br /><li><b>Kimberley Brown</b> and <b>Stephanie Holmes</b> - Senior Analyst and Associate Developer at Sky</li><br /><li><b>Amelia Humfress</b> - CEO of Steer</li><br /><li><b>Radhika Sanghani</b> - Journalist at The Guardian</li></ul>",
     "video": "https://www.youtube.com/embed/bXfXk0hAv0s",
+    "videoType": "youtube",
     "image": "/images/events/logo/womenintech.png"
   }, {
     "title": "Devoxx UK 2015",
@@ -92,7 +103,8 @@
     "link": "http://www.devoxx.co.uk/",
     "date": "19 June 2015",
     "description": "<p><b>Tom Maule</b> talks about the scalability challenges NOW TV faces with linear streaming, with reference to large sporting events and the popular fantasy drama; Game of Thrones.</p>",
-    "video": "",
+    "video": "<div data-parleys-presentation='now-tv-linear-streaming-unpredictable-scalability-challenge' style='width:100%;height:300px'><script type = 'text/javascript' src='//parleys.com/js/parleys-share.js'></script><a href='https://www.parleys.com/play/now-tv-linear-streaming-unpredictable-scalability-challenge'>Watch on Parleys.com</a></div>",
+    "videoType": "other",
     "image": "/images/events/logo/devoxx.jpeg"
   }, {
     "title": "Couchbase London Meetup",
@@ -101,6 +113,7 @@
     "date": "20 October 2014",
     "description": "<p><b>Julien Gagnet</b> talks about our use of Couchbase as a user profile store.</p>",
     "video": "https://www.youtube.com/embed/GwE5j5vqaMk",
+    "videoType": "youtube",
     "image": "/images/events/logo/couchbase.jpg"
   }, {
     "title": "EuroPython 2013",
@@ -109,6 +122,7 @@
     "date": "3 July 2013",
     "description": "<p><b>Russell Sherwood</b> and <b>David Sale</b> talk about the key points to give you a taster of what life is like in an agile development team.</p>",
     "video": "https://www.youtube.com/embed/A-Ng73NXcTI",
+    "videoType": "youtube",
     "image": "/images/events/logo/europython2013.png"
   }, {
     "title": "EuroPython 2012",
@@ -117,5 +131,6 @@
     "date": "5 July 2012",
     "description": "<p><b>Russell Sherwood</b> and <b>David Sale</b> cover the role of BDD in Agile Development, creating a successful and useful BDD test and BDD usage in continuous integration.</p>",
     "video": "https://www.youtube.com/embed/OMLDHNaUMB8",
+    "videoType": "youtube",
     "image": "/images/events/logo/europython2012.png"
   }]
