@@ -155,7 +155,7 @@ title: Events &amp; Talks
         if(videoSource != null && videoSource.indexOf("youtube") > -1) {
           //Pause YouTube videos
           iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        } else {
+        } else if(videoSource == null) {
           //Pause Parleys videos
           var videoDiv = iframe.contentWindow.$('#video');
           var video = videoDiv[0].getElementsByTagName('video')[0];
