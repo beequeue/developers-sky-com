@@ -45,7 +45,6 @@ date:   YYYY-MM-DD HH:MM:SS
 author: First Last
 categories: blog category
 image: a link to an image to be used
-excerpt: “An excerpt you want to appear in the blog summary screen”
 ---
 ```
 An example is as follows:-
@@ -57,7 +56,6 @@ date:   2015-05-12 08:52:19
 author: Donald Knuth
 categories: conferences
 image: /images/test.png
-excerpt: "Sky are attending Google I/O - here's what we're planning to see any why"
 ---
 ```
 > Note: Please be careful to escape any characters in the header. For instance, instead of using an apostrophe ('), replace it with `&apos;`, and instead of using an ampersand (&), replace with `&amp;`. Further replacements might be less than/greater than symbols, which you should replace with `&lt;` and `&gt;` respectively. Finally, please try and avoid double quotation ("), as these will signal the end of your string.*
