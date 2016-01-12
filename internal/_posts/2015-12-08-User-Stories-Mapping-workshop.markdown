@@ -22,8 +22,6 @@ to learn the main aspects of the Story Mapping approach as described by Jeff Pat
 [http://www.amazon.co.uk/User-Story-Mapping-Discover-Product/dp/1491904909](), 
 have fun and get used to collaborate together; Developers, Product Owners and anyone with a  stake on the success of your product.
 
-Stay tuned for more updates!
 
-Diego Minelli, Reinu Kanda
 
 Sky Go
