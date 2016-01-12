@@ -22,26 +22,26 @@ in the Sky campus in Osterley and at the SNS office in London
 User Story Mapping can help Scrum Master, Developers, Product Owners and anyone with a stake 
 on the success of our products
 
-### #1 
+### *#1*
 First we broke into many table and we asked each table to break down they morning routine into tasks
 then we ordered the task on a map following the narrative flow (X) and details (Y) dimensions,
 the outcome looked something like the picture below:
 
 ![shared](/images/blogs/userstorymapping/map1.png)
 
-### #2
+### *#2*
 Next, we learned about grouping tasks, typically expressed in terms subjective to the person 
-describing them, in high level activities.
+describing them, in high level *Activities*.
 Activities are described in a way everyone can relate to in the same way and are a great tool to 
-describe the high level narrative of a journey into a product (Backbone)
+describe the high level narrative of a journey into a product (*Backbone*)
 
 ![shared](/images/blogs/userstorymapping/map2.png)
 
-### #3 
-Once you have grown a model of your product you can start to focus on defining desired outcomes. 
+### *#3*
+Once you have grown a model of your product you can start to focus on defining *desired outcomes*. 
 They are used to drive collaborative conversations, refining the map in a way conducive 
 to fulfil specific goals
-Desired outcome are a great way to focus drive an MVP approach or more in general to facilitate release planning 
+Desired outcome are a great way to focus drive an *MVP* approach or more in general to facilitate release planning 
 
 ![shared](/images/blogs/userstorymapping/map3.png)
 
@@ -65,11 +65,11 @@ you might be surprised by what you learn!
 
 An important point on the session is to understand of the need to minimise development effort while maximizing the outcome for your users:
 
-"There is never enough time and resources to build everything you want"
+> There is never enough time and resources to build everything you want
 
 And also:
 
-"Product Development is not about building software but about changing the world with useful outcomes"
+> Product Development is not about building software but about changing the world with useful outcomes
 
 Main concepts explored:
 * Stories/tasks
