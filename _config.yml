@@ -10,3 +10,6 @@ kramdown:
   input: GFM
   hard_wrap: false
 permalink: pretty
+
+sass:
+  style: compressed
