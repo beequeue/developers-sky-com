@@ -64,7 +64,7 @@ image: /images/test.png
 
 * Add, commit and push your post
 
-* [Create a pull request into master](https://help.github.com/articles/using-pull-requests/). Then wait for it to be merged. It will automatically appear on developers.sky.com once merged.
+* [Create a pull request into gh-pages branch](https://help.github.com/articles/using-pull-requests/). Then wait for it to be merged. It will automatically appear on developers.sky.com once merged.
 
 * Posts that are destined for external viewing will likely take longer to be reviewed, as the post will go through an approval process to ensure it conforms against the [guidelines](https://github.com/BSkyB/bskyb.github.io/wiki/External-Guidelines).
 
@@ -89,7 +89,7 @@ Images can either be served from an external location (in which case, include th
 
 * Add, commit and push your event
 
-* [Create a pull request into master](https://help.github.com/articles/using-pull-requests/). Then wait for it to be merged. It will automatically appear on developers.sky.com once merged.
+* [Create a pull request into gh-pages branch](https://help.github.com/articles/using-pull-requests/). Then wait for it to be merged. It will automatically appear on developers.sky.com once merged.
 
 * Please ensure it conforms to the [guidelines](https://github.com/BSkyB/bskyb.github.io/wiki/External-Guidelines).
 
@@ -115,7 +115,7 @@ Images can either be served from an external location (in which case, include th
 
 * Add, commit and push your talk
 
-* [Create a pull request into master](https://help.github.com/articles/using-pull-requests/). Then wait for it to be merged. It will automatically appear on developers.sky.com once merged.
+* [Create a pull request into gh-pages branch](https://help.github.com/articles/using-pull-requests/). Then wait for it to be merged. It will automatically appear on developers.sky.com once merged.
 
 * Please ensure it conforms to the [guidelines](https://github.com/BSkyB/bskyb.github.io/wiki/External-Guidelines).
 
