@@ -31,21 +31,21 @@ the outcome looked something like the picture below:
 
 ### *#2*
 Next, we learned about grouping tasks, typically expressed in terms subjective to the person 
-describing them, in high level *Activities*.
+describing them, in high level **Activities**.
 Activities are described in a way everyone can relate to in the same way and are a great tool to 
-describe the high level narrative of a journey into a product (*Backbone*)
+describe the high level narrative of a journey into a product (**Backbone**)
 
 ![shared](/images/blogs/userstorymapping/map2.jpg)
 
 ### *#3*
-Once you have grown a model of your product you can start to focus on defining *desired outcomes*. 
+Once you have grown a model of your product you can start to focus on defining **desired outcomes**. 
 They are used to drive collaborative conversations, refining the map in a way conducive 
 to fulfil specific goals
-Desired outcome are a great way to focus drive an *MVP* approach or more in general to facilitate release planning 
+Desired outcome are a great way to focus drive an **MVP** approach or more in general to facilitate release planning 
 
 ![shared](/images/blogs/userstorymapping/map3.jpg)
 
-##The examples
+## The examples
 
 * Sky Campus workshop
 On this workshop we built map to model morning task routines
@@ -72,17 +72,25 @@ And also:
 > Product Development is not about building software but about changing the world with useful outcomes
 
 Main concepts explored:
+
 * Stories/tasks
+
 * Activities
+
 * Backbone
+
 * Personas
+
 * Splitting the map
+
 * MVP 
+
 * Sprints
+
 * Release Roadmap
 
 That’s all! 
 if you want to find out more, we recommend to read Jeff Patton's milestone book:
 
 ![shared](/images/blogs/userstorymapping/book.jpg)
-[http://www.amazon.co.uk/User-Story-Mapping-Discover-Product/dp/1491904909]()
+[http://www.amazon.co.uk/User-Story-Mapping-Discover-Product/dp/1491904909](http://www.amazon.co.uk/User-Story-Mapping-Discover-Product/dp/1491904909)
