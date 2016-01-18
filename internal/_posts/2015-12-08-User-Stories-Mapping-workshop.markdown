@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  “User Story Mapping Workshop”
+title:  User Story Mapping Workshop
 date:   2015-12-08
 author: Diego Minelli
 categories: agile
@@ -17,7 +17,7 @@ As the questions above are relevant to many Product Development teams,
 to address them we explored the User Story Mapping as a way to approach User Stories workshop
 
 ## The Workshop
-On the 22nd of October and on 10th of December 2015 we run a User Story Mapping workshop 
+On the 22nd of October and on the 10th of December 2015 we run a User Story Mapping workshop 
 in the Sky campus in Osterley and at the SNS office in London 
 User Story Mapping can help Scrum Master, Developers, Product Owners and anyone with a stake 
 on the success of our products
@@ -52,7 +52,7 @@ On this workshop we built map to model morning task routines
 The MVP scenario was “Alarm did not go off, need to get out of the house in 10 minutes, what is the minimum set of task I have to do?” 
 * SNS workshop:
 We built maps to model the feature on the Facebook web app
-The MVP scenario was “we have a meeting with potential investors in a week, what is the minimum set of feature I have to build to prove the strength of the platform?” 
+The MVP scenario was “we have a meeting with potential investors in a week, what is the minimum set of features I have to build to prove the strength of the platform?” 
 
 You can practice story mapping with any kind of product or process, 
 A good exercise you can do right away is start modelling your own team app, 
@@ -63,7 +63,7 @@ you might be surprised by what you learn!
 
 ## What have we learnt?
 
-An important point on the session is to understand of the need to minimise development effort while maximizing the outcome for your users:
+An important point of the session is to understand the need to minimise development effort while maximizing the outcome for your users:
 
 > There is never enough time and resources to build everything you want
 
@@ -82,7 +82,7 @@ Main concepts explored:
 * Release Roadmap
 
 That’s all! 
-if you want to find out more, we recommend to read Jeff Patton milestone book:
+if you want to find out more, we recommend to read Jeff Patton's milestone book:
 
 ![shared](/images/blogs/userstorymapping/book.png)
 [http://www.amazon.co.uk/User-Story-Mapping-Discover-Product/dp/1491904909]()
