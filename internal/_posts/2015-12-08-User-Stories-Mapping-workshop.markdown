@@ -7,7 +7,7 @@ categories: agile
 image: /images/blogs/userstorymapping/userstorymapping.png.jpg
 excerpt: “How to collaborate effectively and build real shared understanding”
 ---
-![shared](/images/blogs/userstorymapping/sharedunderstanding.jpg)
+![shared](/images/blogs/userstorymapping/sharedunderstanding.png)
 
 * Are you building features the customers really want to use?
 * Does your project team have a high level of shared understanding?
@@ -93,4 +93,5 @@ That’s all!
 if you want to find out more, we recommend to read Jeff Patton's milestone book:
 
 ![shared](/images/blogs/userstorymapping/book.jpg)
+
 [http://www.amazon.co.uk/User-Story-Mapping-Discover-Product/dp/1491904909](http://www.amazon.co.uk/User-Story-Mapping-Discover-Product/dp/1491904909)
