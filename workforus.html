@@ -72,8 +72,7 @@ title: Work For Us
         var github = $('#github').val() + "\n";
 
         $.ajax({
-          //url: "//formspree.io/Annelisa.Dinwoodie@sky.uk",
-          url: "//formspree.io/craig.rees2@sky.uk",
+          url: "//formspree.io/Annelisa.Dinwoodie@sky.uk",
           method: "POST",
           data: {Name: name, Email: email, Skills: skillsFormatted, Other: otherSkills, LinkedIn: linkedIn, GitHub: github, Message: message},
           success: function(data) {
