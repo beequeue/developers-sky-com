@@ -1,4 +1,4 @@
-@import 'mixin.scss';
+@import 'mixin';
 
 /*
 -----------------------------------------
@@ -13,7 +13,7 @@
 .polaris-wrapper.workforus {
     @include tablet {
       .title {
-        width: 85%; 
+        width: 85%;
       }
     }
     .hero-wrapper {
