@@ -1,0 +1,40 @@
+.footer {
+  background-color: #EEE;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.footer__inner {
+  margin: 0 auto;
+  max-width: 974px;
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+  text-align: left;
+}
+
+.footer__section {
+  vertical-align: top;
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.footer__section-title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.footer__section ul li {
+  padding: 4px 0;
+  box-sizing: border-box;
+
+  a {
+    color: #666;
+  }
+}
+
+.footer__copyright {
+  margin: 12px 0;
+}
